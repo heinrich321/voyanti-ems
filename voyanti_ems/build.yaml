@@ -1,13 +1,13 @@
-# https://developers.heinrich321.io/docs/add-ons/configuration#add-on-dockerfile
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 build_from:
-  aarch64: "ghcr.io/heinrich321/aarch64-base:3.15"
-  amd64: "ghcr.io/heinrich321/amd64-base:3.15"
-  armhf: "ghcr.io/heinrich321/armhf-base:3.15"
-  armv7: "ghcr.io/heinrich321/armv7-base:3.15"
-  i386: "ghcr.io/heinrich321/i386-base:3.15"
+  aarch64: "ghcr.io/home-assistant/aarch64-base:3.15"
+  amd64: "ghcr.io/home-assistant/amd64-base:3.15"
+  armhf: "ghcr.io/home-assistant/armhf-base:3.15"
+  armv7: "ghcr.io/home-assistant/armv7-base:3.15"
+  i386: "ghcr.io/home-assistant/i386-base:3.15"
 labels:
-  org.opencontainers.image.title: "Home Assistant Add-on: Voyanti EMS Addon"
-  org.opencontainers.image.description: "Voyanti Energy Management System Addon"
+  org.opencontainers.image.title: "Home Assistant Add-on: Voyanti EMS"
+  org.opencontainers.image.description: "Voyanti Energy Management System Addon."
   org.opencontainers.image.source: "https://github.com/heinrich321/voyanti-ems"
   org.opencontainers.image.licenses: "Apache License 2.0"
 args:
