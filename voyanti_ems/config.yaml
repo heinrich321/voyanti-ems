@@ -15,10 +15,12 @@ map:
   - share:rw
 options:
   message: "Hello world.. VY!"
-  MQTT_HOST: str
-  MQTT_PORT: port
-  MQTT_USERNAME: str
-  MQTT_PASSWORD: password
+  VOYANTI_SITE_ID: "xxxxxxxxxxxxx"
+  mqtt:
+    - MQTT_HOST: str
+      MQTT_PORT: port
+      MQTT_USERNAME: str
+      MQTT_PASSWORD: password
 schema:
   message: "str?"
 image: "ghcr.io/heinrich321/{arch}-voyanti-ems"
