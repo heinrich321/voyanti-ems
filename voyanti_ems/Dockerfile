@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 
 
 # Install requirements for add-on
-RUN apk add --no-cache python3 py3-pip build-base cmake g++ make patchelf pkgconfig musl-dev
+# RUN apk add --no-cache python3 py3-pip build-base cmake g++ make patchelf pkgconfig musl-dev
 
 
 # Execute during the build of the image
@@ -16,4 +16,4 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
-RUN pip3 install -r /usr/src/requirements.txt
+RUN pip install -r /usr/src/requirements.txt
