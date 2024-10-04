@@ -16,4 +16,4 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
-RUN pip3 install -r /rootfs/usr/src/requirements.txt
+RUN pip3 install -r /usr/src/requirements.txt
