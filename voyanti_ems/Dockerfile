@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 
 
 # Install requirements for add-on
-RUN apk add --no-cache python3 py3-pip cmake g++ make patchelf
+RUN apk add --no-cache python3 py3-pip build-base cmake g++ make patchelf pkgconfig musl-dev
 
 
 # Execute during the build of the image
