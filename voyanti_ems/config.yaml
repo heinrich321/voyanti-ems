@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Voyanti EMS Addon
-version: "1.2.4"
+version: "1.2.5"
 slug: voyanti_ems
 description: Voyanti Energy Management System Addon
 url: "https://github.com/heinrich321/voyanti-ems/tree/main"
@@ -16,6 +16,11 @@ map:
 options:
   message: "Hello world.. VY!"
   VOYANTI_SITE_ID: "xxxxxxxxxxxxx"
+  MQTT_HOST: core-mosquitto
+  MQTT_PORT: 1883
+  MQTT_USERNAME: hass
+  MQTT_PASSWORD: ""
+schema:
   MQTT_HOST: str
   MQTT_PORT: port
   MQTT_USERNAME: str
