@@ -1,6 +1,10 @@
 import os
 import requests
 import json
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Home Assistant Supervisor API Configuration
 HOME_ASSISTANT_URL = "http://supervisor/core/api"
@@ -21,17 +25,17 @@ UPDATE_SENSOR_URL = f"{HOME_ASSISTANT_URL}/states/sensor.solar_forecast"
 
 # Function to fetch solar forecast from the API
 def fetch_solar_forecast():
-    print(API_URL)
-    print(HEADERS)
+    logger.info(API_URL)
+    logger.info(HEADERS)
     try:
         response = requests.get(API_URL)
         if response.status_code == 200:
             return response.json()
         else:
-            print(f"Failed to fetch data from API: {response.status_code}")
+            logger.info(f"Failed to fetch data from API: {response.status_code}")
             return None
     except Exception as e:
-        print(f"Error fetching data: {e}")
+        logger.info(f"Error fetching data: {e}")
         return None
 
 # Function to publish solar forecast to Home Assistant, including time series data
@@ -56,9 +60,9 @@ def publish_solar_forecast(total_today_kwh, day_profile):
         # Publish the forecast data to Home Assistant
         response = requests.post(UPDATE_SENSOR_URL, headers=HEADERS, data=json.dumps(payload))
         if response.status_code == 200:
-            print("Solar forecast published successfully.")
+            logger.info("Solar forecast published successfully.")
         else:
-            print(f"Failed to publish forecast: {response.status_code}")
-            print(response.text)
+            logger.info(f"Failed to publish forecast: {response.status_code}")
+            logger.info(response.text)
     except Exception as e:
-        print(f"Error occurred while publishing forecast: {e}")
+        logger.info(f"Error occurred while publishing forecast: {e}")
