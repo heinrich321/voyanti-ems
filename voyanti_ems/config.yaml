@@ -14,17 +14,15 @@ init: false
 map:
   - share:rw
 options:
-  message: "Hello world.. VY!"
   VOYANTI_SITE_ID: "xxxxxxxxxxxxx"
   MQTT_HOST: core-mosquitto
   MQTT_PORT: 1883
   MQTT_USERNAME: hass
   MQTT_PASSWORD: ""
 schema:
+  VOYANTI_SITE_ID: str
   MQTT_HOST: str
   MQTT_PORT: port
   MQTT_USERNAME: str
   MQTT_PASSWORD: password
-schema:
-  message: "str?"
 image: "ghcr.io/heinrich321/{arch}-voyanti-ems"
