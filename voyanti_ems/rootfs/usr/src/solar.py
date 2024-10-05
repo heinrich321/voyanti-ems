@@ -21,6 +21,8 @@ UPDATE_SENSOR_URL = f"{HOME_ASSISTANT_URL}/states/sensor.solar_forecast"
 
 # Function to fetch solar forecast from the API
 def fetch_solar_forecast():
+    print(API_URL)
+    print(HEADERS)
     try:
         response = requests.get(API_URL)
         if response.status_code == 200:
