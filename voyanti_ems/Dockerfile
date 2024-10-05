@@ -6,7 +6,7 @@ FROM $BUILD_FROM
 # Install requirements for add-on
 RUN apk add --no-cache python3 py3-pip python3-dev libffi-dev build-base cmake g++ make patchelf pkgconfig musl-dev
 
-RUN pip install numpy==1.21.0
+# RUN pip install numpy==1.21.0
 
 RUN pip freeze
 RUN python3 --version
