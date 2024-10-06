@@ -6,14 +6,19 @@
 
 # Add your code here
 
-# Declare variables
-declare message
+# Fetch options using bashio
+SITE_ID=$(bashio::config 'VOYANTI_SITE_ID')
+MQTT_HOST=$(bashio::config 'MQTT_HOST')
+MQTT_PORT=$(bashio::config 'MQTT_PORT')
+MQTT_USERNAME=$(bashio::config 'MQTT_USERNAME')
+MQTT_PASSWORD=$(bashio::config 'MQTT_PASSWORD')
 
-## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
-
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
+# Export them as environment variables for the Python script
+export VOYANTI_SITE_ID=$SITE_ID
+export MQTT_HOST=$MQTT_HOST
+export MQTT_PORT=$MQTT_PORT
+export MQTT_USERNAME=$MQTT_USERNAME
+export MQTT_PASSWORD=$MQTT_PASSWORD
 
 ## Run your program
 # exec /usr/bin/my_program
