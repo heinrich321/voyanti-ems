@@ -11,6 +11,10 @@ arch:
   - amd64
   - i386
 init: false
+
+homeassistant: true
+host_network: true
+
 map:
   - share:rw
 options:
