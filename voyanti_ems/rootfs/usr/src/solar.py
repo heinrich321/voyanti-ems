@@ -26,7 +26,6 @@ UPDATE_SENSOR_URL = f"{HOME_ASSISTANT_URL}/states/sensor.solar_forecast"
 # Function to fetch solar forecast from the API
 def fetch_solar_forecast():
     logger.info(API_URL)
-    logger.info(HEADERS)
     try:
         response = requests.get(API_URL)
         if response.status_code == 200:
@@ -56,8 +55,12 @@ def publish_solar_forecast(total_today_kwh, day_profile):
         }
     }
 
+    logger.info(payload)
+
     try:
         # Publish the forecast data to Home Assistant
+        logger.info(UPDATE_SENSOR_URL)
+        logger.info(HEADERS)
         response = requests.post(UPDATE_SENSOR_URL, headers=HEADERS, data=json.dumps(payload))
         if response.status_code == 200:
             logger.info("Solar forecast published successfully.")
